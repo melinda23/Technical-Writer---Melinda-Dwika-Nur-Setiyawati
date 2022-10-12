@@ -1,0 +1,7 @@
+Case 1
+
+https://63458c7139ca915a69023256.mockapi.io/api/case1/DataProduk
+https://virtserver.swaggerhub.com/MELINANJAS/Case1/1.0.0/api/listProduct
+
+
+https://app.swaggerhub.com/apis/MELINANJAS/Case1/1.0.0
