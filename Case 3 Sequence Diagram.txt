@@ -1,0 +1,33 @@
+title User membeli paket add on
+
+participant User
+participant Aplikasi
+participant Sistem Backend
+
+User->Aplikasi:Melakukan Login
+Aplikasi->User:Menampilkan halaman Home
+User->Aplikasi:Pilih Menu Buy
+Aplikasi->User:Menampilkan list paket add on
+User->Aplikasi:Pilih Paket add on
+Aplikasi->Sistem Backend:Kirim info data user & paket
+Sistem Backend->Sistem Backend:Validasi Nomor Indihome
+alt not valid
+Sistem Backend->Aplikasi:Kirim info user tidak memiliki nomor indihome
+Aplikasi->Aplikasi:Redirect ke halaman registrasi akun
+Aplikasi->User:Menampilkan halaman registrasi akun
+User->User:Melakukan Registrasi
+else valid
+Sistem Backend->Sistem Backend:Generate kode OTP
+Sistem Backend->Aplikasi:Kirim Kode OTP
+Aplikasi->User:Menampilkan kode OTP
+User->User:Input kode OTP
+Sistem Backend->Aplikasi:
+alt False
+Sistem Backend->Aplikasi:Kirim Kode OTP salah
+Aplikasi->User:Menampilkan info OTP salah
+else True
+Sistem Backend->Sistem Backend:Subscribe paket
+Sistem Backend->Aplikasi:Kirim Info pembelian paket
+Aplikasi->User:Menampilkan info pembelian paket berhasil
+end 
+end 

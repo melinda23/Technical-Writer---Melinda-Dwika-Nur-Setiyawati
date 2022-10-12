@@ -1,0 +1,18 @@
+title User Membuka Halaman Paket
+
+participant User
+participant Aplikasi
+participant Sistem
+
+User->Aplikasi:Buka Menu Shop
+Aplikasi->Aplikasi:Menampilkan halaman Shop
+Aplikasi->Sistem:Mengirimkan Informsi User
+Sistem->Sistem:Validasi User
+alt not valid
+Sistem->Aplikasi:Redirect Halaman Home
+Aplikasi->Aplikasi:Menampilkan Halaman Home
+else Valid
+Sistem->Sistem:Mengambil Data \nPaket Penawaran
+Sistem->Aplikasi:Mengirim Data Paket Penawaran
+Aplikasi->Aplikasi:Menampilkan Data Paket Penawaran
+end 
